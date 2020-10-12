@@ -67,9 +67,7 @@ class QueryTransformer(Transformer):
         Transformer.__init__(self, visit_tokens=True)
 
     def boolexpr_op(self, a, op, b) -> Callable[[User], bool]:
-        def f(u):
-            return op(a(u), b(u))
-        return f
+        return lambda u: op(a(u), b(u))
 
     def op_and(self, a, b) -> Callable[[User], bool]:
         return lambda u: a(u) and b(u)
@@ -167,11 +165,11 @@ def main():
     if args.query is not None:
         try:
             tree = query_parser.parse(args.query)
-            print(tree.pretty())
             query_func = QueryTransformer().transform(tree)
         except UnexpectedToken as e:
-            print("Invalid query entered!")
+            print('Invalid query entered!')
             if args.verbose:
+                print('\nStack trace:\n')
                 print(e)
             return
     else:
