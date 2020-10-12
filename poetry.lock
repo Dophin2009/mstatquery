@@ -1,0 +1,35 @@
+[[package]]
+name = "lark-parser"
+version = "0.10.0"
+description = "a modern parsing library"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+nearley = ["js2py"]
+regex = ["regex"]
+
+[[package]]
+name = "mstat"
+version = "0.1.0"
+description = "Microsoft Teams meeting attendance log parser"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.source]
+url = "https://github.com/Dophin2009/mstat"
+reference = "fac67fea49b5521928aba0fca0245876bb02e863"
+type = "git"
+
+[metadata]
+lock-version = "1.0"
+python-versions = "^3.6"
+content-hash = "ed3dc09ba71093ddb58e5b14ab5d54375a0eeef482dc6b9419c53a15ea6c6602"
+
+[metadata.files]
+lark-parser = [
+    {file = "lark_parser-0.10.0-py2.py3-none-any.whl", hash = "sha256:f7044d3a4ad42c07e853da590727d5f1e5f9c36e5795bdeb05227fe0bace2344"},
+]
+mstat = []

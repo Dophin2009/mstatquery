@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mstatquery"
+version = "0.1.0"
+description = ""
+authors = ["Eric Zhao <21zhaoe@protonmail.com>"]
+license = "MIT"
+packages = [
+  { include = "mstatquery" },
+]
+
+[tool.poetry.scripts]
+mstatquery = "mstatquery.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+lark-parser = "^0.10.0"
+mstat = {git = "https://github.com/Dophin2009/mstat"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
