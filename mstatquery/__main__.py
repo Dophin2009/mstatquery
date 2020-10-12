@@ -12,7 +12,6 @@ from lark import v_args
 from mstat import RecordStatus
 from mstat import User
 
-default_encoding = 'utf-8'
 
 query_grammar = r"""
     ?start      : boolexpr
@@ -136,8 +135,12 @@ class QueryTransformer(Transformer):
 
 
 def parser() -> argparse.ArgumentParser:
+    default_encoding = 'utf-8'
+    default_format_str = '{name}'
+
     parser = argparse.ArgumentParser(
-        description='Process a Microsoft Teams meeting attendance tsv.')
+        description='Process a Microsoft Teams meeting attendance tsv.',
+        formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('file',
                         help='tsv file to process')
     parser.add_argument('query', nargs='?',
@@ -148,9 +151,9 @@ def parser() -> argparse.ArgumentParser:
                         % (default_encoding))
     parser.add_argument('--utf16', action='store_true',
                         help='use utf-16 encoding')
-    parser.add_argument('-f', '--format', default='{name}',
-                        help='set format string for each line; '
-                        'ignored if --csv is enabled')
+    parser.add_argument('-f', '--format', default=default_format_str,
+                        help='set format string for each line (default: %s)'
+                        % (default_format_str))
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='enable stack trace')
     return parser
