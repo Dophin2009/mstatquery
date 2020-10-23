@@ -5,9 +5,9 @@ Teams meeting by parsing the attendance log.
 
 ## Installation
 
-This project use Python Poetry:
+This project uses Python Poetry:
 
-    $ git clone https://github.com/Dophin2009/mstatquery.git
+    $ git clone https://github.com/stogacs/mstatquery.git
     $ cd mstatquery
     $ poetry install
 
@@ -45,7 +45,7 @@ Pass `-h` or `--help` to show options:
                             set format string for each line; ignored if --csv is enabled
       -v, --verbose         enable stack trace
 
-# License
+## License
 
 This project is licensed under the terms of the MIT license. See
 [LICENSE](./LICENSE) for details.
