@@ -29,7 +29,8 @@ Example:
 Pass `-h` or `--help` to show options:
 
     $ mstatquery -h
-    usage: mstatquery [-h] [--encoding ENCODING] [--utf16] [-f FORMAT] [-v] file [query]
+    usage: mstatquery [-h] [--encoding ENCODING] [--utf16] [-f FORMAT] [-v]
+                  file [query]
 
     Process a Microsoft Teams meeting attendance tsv.
 
@@ -42,7 +43,7 @@ Pass `-h` or `--help` to show options:
       --encoding ENCODING   use an alternate encoding (default utf-8)
       --utf16               use utf-16 encoding
       -f FORMAT, --format FORMAT
-                            set format string for each line; ignored if --csv is enabled
+                            set format string for each line (default: {name})
       -v, --verbose         enable stack trace
 
 ## License
